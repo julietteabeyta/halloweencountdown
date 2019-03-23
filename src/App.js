@@ -8,8 +8,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-
-    let countdown = setInterval(() => {
+    setInterval(() => {
       let {timeUntil} = this.state;
       const countDownDate = new Date("Oct 31, 2019 00:00:00").getTime();
       const currentDate = new Date().getTime();
