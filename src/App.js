@@ -1,24 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './style.css';
 
 class App extends Component {
+
+  state = {
+    timeUntil: 0,
+  }
+
+  componentDidMount() {
+
+    let countdown = setInterval(() => {
+      let {timeUntil} = this.state;
+      const countDownDate = new Date("Oct 31, 2019 00:00:00").getTime();
+      const currentDate = new Date().getTime();
+      let timeBetween = Math.abs(countDownDate-currentDate)/1000;
+      const days = Math.floor(timeBetween / 86400);
+      timeBetween -= days * 86400;
+      const hours = Math.floor(timeBetween / 3600) % 24;
+      timeBetween -= hours * 3600;
+      const minutes = Math.floor(timeBetween / 60) % 60;
+      timeBetween -= minutes * 60;
+      const seconds = Math.round(timeBetween % 60);
+      timeUntil =  `There are ${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds until Halloween!`;
+      this.setState({timeUntil})
+    }, 1000);
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+      <div className="container">
+        <header className="header">
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            {this.state.timeUntil}
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
         </header>
       </div>
     );
