@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import './style.css';
+import './style.scss';
+import mmyers from './mmyers.jpg'
 
 class App extends Component {
 
   state = {
-    timeUntil: 0,
+    timeUntil: '',
   }
 
   componentDidMount() {
@@ -20,7 +21,7 @@ class App extends Component {
       const minutes = Math.floor(timeBetween / 60) % 60;
       timeBetween -= minutes * 60;
       const seconds = Math.round(timeBetween % 60);
-      timeUntil =  `There are ${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds until Halloween!`;
+      timeUntil =  `${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds.`;
       this.setState({timeUntil})
     }, 1000);
   }
@@ -29,10 +30,15 @@ class App extends Component {
     return (
       <div className="container">
         <header className="header">
-          <p>
-            {this.state.timeUntil}
-          </p>
+          <div className="glitch" data-text="HALLOWEEN">
+            HALLOWEEN
+          </div>
         </header>
+        <img src={mmyers} alt="Michael Myers" />
+        <div className="secondary-text">will be in</div>
+        <p>
+          {this.state.timeUntil}
+        </p>
       </div>
     );
   }
