@@ -21,7 +21,11 @@ class App extends Component {
       const minutes = Math.floor(timeBetween / 60) % 60;
       timeBetween -= minutes * 60;
       const seconds = Math.round(timeBetween % 60);
-      timeUntil =  `${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds.`;
+      if(seconds === 1){
+        timeUntil =  `${days} days, ${hours} hours, ${minutes} minutes, & ${seconds} second`;
+      } else{
+        timeUntil =  `${days} days, ${hours} hours, ${minutes} minutes, & ${seconds} seconds`;
+      }
       this.setState({timeUntil})
     }, 1000);
   }
@@ -29,16 +33,14 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <header className="header">
-          <div className="glitch" data-text="HALLOWEEN">
+        <div className="countdown-content">
+          <div className="glitch header" data-text="HALLOWEEN">
             HALLOWEEN
           </div>
-        </header>
+          <div className="date-text">{this.state.timeUntil}</div>
+        </div>
+        <div className="countdown-text">countdown</div>
         <img src={mmyers} alt="Michael Myers" />
-        <div className="secondary-text">will be in</div>
-        <p>
-          {this.state.timeUntil}
-        </p>
       </div>
     );
   }

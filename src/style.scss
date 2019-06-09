@@ -1,28 +1,61 @@
-.container {
-  // display
-  height: 100vh;
-  text-align: center;
-  background-color: black;
-  color: white;
+body{
+  background: #000;
+  overflow: hidden;
 }
 
-img{
-  position: absolute;
-  height: 70vh;
-  left: -35vh;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100vh;
+  color: #EB6123;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 2.75vmin;
+  padding-bottom: 15px;
 }
 
 .header {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: 125px;
-  font-weight: bold;
+  position: absolute;
+  bottom: 5%;
+  left: 18px;
+  font-size: 13vmin;
+  color: #fff;
+  z-index: 10;
+  animation: fade-in 1s linear forwards;
 }
 
-.glitch {
-  position: relative;
+img,
+.header,
+.date-text{
+  opacity: 0;
+}
+
+.date-text{
+  animation: fade-in 1s linear forwards 1s;
+  position: absolute;
+  bottom: 3%;
+  left: 20px;
+}
+
+img{
+  position: absolute;
+  height: 70vh;
+  top: 10%;
+  left: -35vh;
+  animation: fade-in 1s linear forwards 2s;
+
+}
+
+.countdown-text{
+  position: absolute;
+  top: 10px;
+  align-self: center;
+  color: #fff;
+  letter-spacing: 7vw;
 }
 
 .glitch::before,
@@ -37,16 +70,16 @@ img{
 
 .glitch::before {
   left: 2px;
-  text-shadow: -1px 0 red;
-  background: black;
+  text-shadow: -1px 0 #ff0000;
+  background: #000;
   clip: rect(44px, 450px, 56px, 0);
   animation: glitch-anim 2s infinite linear alternate-reverse;
 }
 
 .glitch::after {
   left: -2px;
-  text-shadow: -1px 0 blue;
-  background: black;
+  text-shadow: -1px 0 #0000ff;
+  background: #000;
   animation: glitch-anim-2 2s infinite linear alternate-reverse;
 }
 
@@ -65,5 +98,11 @@ img{
     #{percentage($i*(1/$steps))} {
       clip: rect(random(100)+px, 9999px, random(100)+px, 0);
     }
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
   }
 }
