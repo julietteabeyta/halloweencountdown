@@ -22,9 +22,9 @@ class App extends Component {
       timeBetween -= minutes * 60;
       const seconds = Math.round(timeBetween % 60);
       if(seconds === 1){
-        timeUntil =  `${days} days, ${hours} hours, ${minutes} minutes, & ${seconds} second`;
+        timeUntil =  `${days} days ${hours} hours ${minutes} minutes ${seconds} second`;
       } else{
-        timeUntil =  `${days} days, ${hours} hours, ${minutes} minutes, & ${seconds} seconds`;
+        timeUntil =  `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
       }
       this.setState({timeUntil})
     }, 1000);
@@ -37,7 +37,7 @@ class App extends Component {
           <div className="glitch header" data-text="HALLOWEEN">
             HALLOWEEN
           </div>
-          <div className="date-text">{this.state.timeUntil}</div>
+          <div className="date-text">{this.state.timeUntil}&nbsp;</div>
         </div>
         <div className="countdown-text">countdown</div>
         <img src={mmyers} alt="Michael Myers" />

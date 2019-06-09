@@ -15,14 +15,16 @@ body{
   padding-bottom: 15px;
 }
 
+.countdown-content{
+  margin: 15px;
+}
+
 .header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: absolute;
-  bottom: 5%;
-  left: 18px;
   font-size: 13vmin;
+  position: relative;
   color: #fff;
   z-index: 10;
   animation: fade-in 1s linear forwards;
@@ -36,9 +38,7 @@ img,
 
 .date-text{
   animation: fade-in 1s linear forwards 1s;
-  position: absolute;
-  bottom: 3%;
-  left: 20px;
+  margin-left: 2px;
 }
 
 img{
@@ -57,6 +57,7 @@ img{
   color: #fff;
   letter-spacing: 7vw;
 }
+
 
 .glitch::before,
 .glitch::after {
