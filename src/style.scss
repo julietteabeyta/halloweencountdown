@@ -16,7 +16,7 @@ body{
 }
 
 .countdown-content{
-  margin: 15px;
+  margin: 15px 15px 50px;
 }
 
 .header {
@@ -105,5 +105,14 @@ img{
 @keyframes fade-in {
   to {
     opacity: 1;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .countdown-text{
+    letter-spacing: 5vw;
+  }
+  .countdown-content{
+    margin-bottom: 15px;
   }
 }
