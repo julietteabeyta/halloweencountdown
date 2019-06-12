@@ -60,7 +60,6 @@ img{
 
 .glitch{
   color: #fff;
-  font-size:100px;
   position: relative;
   width: 400px;
 }
@@ -95,7 +94,7 @@ img{
   $steps:20;
   @for $i from 0 through $steps{
     #{percentage($i*(1/$steps))}{
-      clip:rect(random(100)+px,9999px,random(100)+px,0);
+      clip:rect(random(13)+vmin,9999px,random(13)+vmin,0);
     }
   }
 }
@@ -104,7 +103,7 @@ img{
   $steps:20;
   @for $i from 0 through $steps{
     #{percentage($i*(1/$steps))}{
-      clip:rect(random(100)+px,9999px,random(100)+px,0);
+      clip:rect(random(13)+vmin,9999px,random(13)+vmin,0);
     }
   }
 }
