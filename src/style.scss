@@ -16,7 +16,7 @@ body{
 }
 
 .countdown-content{
-  margin: 15px;
+  margin: 15px 15px 50px;
 }
 
 .header {
@@ -39,6 +39,7 @@ img,
 .date-text{
   animation: fade-in 1s linear forwards 1s;
   margin-left: 2px;
+  z-index: 10;
 }
 
 img{
@@ -117,5 +118,8 @@ img{
 @media screen and (min-width: 768px){
   .countdown-text{
     letter-spacing: 5vw;
+  }
+  .countdown-content{
+    margin-bottom: 15px;
   }
 }
