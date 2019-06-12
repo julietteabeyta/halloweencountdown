@@ -20,7 +20,7 @@ class App extends Component {
       timeBetween -= hours * 3600;
       const minutes = Math.floor(timeBetween / 60) % 60;
       timeBetween -= minutes * 60;
-      const seconds = Math.round(timeBetween % 60)-1;
+      let seconds = Math.round(timeBetween % 60)-1;
       if(seconds === -1){
         seconds = 59;
       }
