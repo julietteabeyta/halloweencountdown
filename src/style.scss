@@ -16,7 +16,7 @@ body{
 }
 
 .countdown-content{
-  margin: 15px 15px 150px;
+  margin: 15px;
 }
 
 .header {
@@ -117,8 +117,5 @@ img{
 @media screen and (min-width: 768px){
   .countdown-text{
     letter-spacing: 5vw;
-  }
-  .countdown-content{
-    margin-bottom: 15px;
   }
 }
