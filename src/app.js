@@ -21,6 +21,9 @@ class App extends Component {
       const minutes = Math.floor(timeBetween / 60) % 60;
       timeBetween -= minutes * 60;
       const seconds = Math.round(timeBetween % 60)-1;
+      if(seconds === -1){
+        seconds = 59;
+      }
       if(seconds === 1){
         timeUntil =  `${days} days ${hours} hours ${minutes} minutes ${seconds} second`;
       } else{
