@@ -1,22 +1,22 @@
 body{
   background: #000;
   overflow: hidden;
+  text-transform: uppercase;
+  font-size: 2.75vmin;
+  font-weight: bold;
+  display: flex;
+  justify-items: center;
 }
 
-.container {
+.countdown-content{
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   height: 100vh;
   color: #EB6123;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 2.75vmin;
   padding-bottom: 15px;
-}
-
-.countdown-content{
-  margin: 15px 15px 75px;
+  margin: -75px 15px;
 }
 
 .header {
@@ -44,17 +44,19 @@ img,
 
 img{
   position: absolute;
+  margin: 0 auto;
   height: 70vh;
   top: 10%;
   left: -35vh;
   animation: fade-in 2s linear forwards 2s;
-
 }
 
 .countdown-text{
   position: absolute;
   top: 10px;
-  align-self: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   color: #fff;
   letter-spacing: 7vw;
 }
