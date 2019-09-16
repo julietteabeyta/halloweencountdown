@@ -42,7 +42,6 @@ class App extends Component {
     //And lets handle all of our threejs stuuuuuuffffff
     this.THREE = THREE;
     var scene = new this.THREE.Scene();
-    var camera = new this.THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     var renderer = new this.THREE.WebGLRenderer( { antialias: true } );
     var controls;
     var skull;
@@ -50,13 +49,11 @@ class App extends Component {
     var objects = [];
     var container = document.createElement( 'div' );
 		document.body.appendChild( container );
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
     var pointLight = new this.THREE.PointLight(0xffffff);
     pointLight.position.set(-200, 200, 200);
     scene.add(pointLight);
 
-    camera = new this.THREE.PerspectiveCamera(50, window.innerWidth/window.innerHeight, 1, 1000);
+    var camera = new this.THREE.PerspectiveCamera(40, window.innerWidth/window.innerHeight, 1, 1000);
     camera.position.set(0, 0, 5);
     scene.add(camera);
     controls = new this.THREE.OrbitControls(camera);
@@ -77,7 +74,7 @@ class App extends Component {
     pointLight4.position.set( 0, 0, 150 );
     scene.add( pointLight4 );
     renderer.setPixelRatio( window.devicePixelRatio );
-    renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.setSize( window.innerWidth, window.innerHeight*.75 );
     renderer.shadowMap.enabled = true;
     container.appendChild( renderer.domElement );
     renderer.gammaOutput = true;
@@ -153,7 +150,7 @@ class App extends Component {
       var height = window.innerHeight;
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
-      renderer.setSize(width, height);
+      renderer.setSize(width, height*.75);
     };
 
 
