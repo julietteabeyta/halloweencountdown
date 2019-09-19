@@ -18,7 +18,22 @@ class App extends Component {
   componentDidMount() {
     setInterval(() => {
       let {timeUntil} = this.state;
-      const countDownDate = new Date("Oct 31, 2019 00:00:00").getTime();
+
+      let year = new Date().getFullYear();
+      const now = new Date();
+      const halloweenDay = new Date(`Oct 31, ${year} 00:00:00`);
+      const start = new Date(halloweenDay.getFullYear(), 0, 0);
+      const halloweenDiff = halloweenDay - start;
+      const diff = now - start;
+      const oneDay = 1000 * 60 * 60 * 24;
+      const todayDOY = Math.floor(diff / oneDay);
+      const halloweenDOY = Math.floor(halloweenDiff / oneDay);
+
+      if(todayDOY > halloweenDOY){
+        year = year + 1;
+      }
+
+      const countDownDate = new Date(`Oct 31, ${year} 00:00:00`).getTime();
       const currentDate = new Date().getTime();
       let timeBetween = Math.abs(countDownDate-currentDate)/1000;
       const days = Math.floor(timeBetween / 86400);
